@@ -7,12 +7,12 @@ This module traces incoming requests and their outgoing repsonses using the even
 To set up the module properly add the following module to your web.config:
 
 ```xml
-	<system.webServer>
-		<modules>
-			<remove name="AppHarborRequestTracer" />
-			<add name="AppHarborRequestTracer" type="AppHarbor.RequestTracer.RequestLoggingModule, AppHarbor.RequestTracer" />
-		</modules>
-	</system.webServer>
+<system.webServer>
+	<modules>
+		<remove name="AppHarborRequestTracer" />
+		<add name="AppHarborRequestTracer" type="AppHarbor.RequestTracer.RequestLoggingModule, AppHarbor.RequestTracer" />
+	</modules>
+</system.webServer>
 ```
 
 Please note that this might already be done automagically when you installed the library from NuGet.
