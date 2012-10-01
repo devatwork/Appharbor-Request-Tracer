@@ -4,6 +4,7 @@
 		<version>0.1.0</version>
 		<authors>Premotion Software Solutions and contributors</authors>
 		<owners>Premotion Software Solutions and contributors</owners>
+		<projectUrl>https://github.com/trilobyte/Appharbor-Request-Tracer</projectUrl>
 		<id>AppHarbor.RequestTracer</id>
 		<title>AppHarbor RequestTracer</title>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
