@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<configuration>
+	<system.webServer>
+		<modules>
+			<remove name="AppHarborRequestTracer" />
+			<add name="AppHarborRequestTracer" type="AppHarbor.RequestTracer.RequestLoggingModule, AppHarbor.RequestTracer" />
+		</modules>
+	</system.webServer>
+</configuration>
