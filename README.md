@@ -7,15 +7,23 @@ This module traces incoming requests and their outgoing responses using the even
 To set up the module properly add the following module to your web.config:
 
 ```xml
-<system.webServer>
-	<modules>
-		<remove name="AppHarborRequestTracer" />
-		<add name="AppHarborRequestTracer" type="AppHarbor.RequestTracer.RequestLoggingModule, AppHarbor.RequestTracer" />
-	</modules>
-</system.webServer>
+<configuration>
+	<appSettings>
+		<!-- set this flag to 1 to enable the request tracer-->
+		<add key="appharbor.requesttracer.enabled" value="0" />
+	</appSettings>
+	<system.webServer>
+		<modules>
+			<remove name="AppHarborRequestTracer" />
+			<add name="AppHarborRequestTracer" type="AppHarbor.RequestTracer.RequestLoggingModule, AppHarbor.RequestTracer" />
+		</modules>
+	</system.webServer>
+</configuration>
 ```
 
 Please note that this might already be done automagically when you installed the library from NuGet.
+
+Request logging is disabled by default, to enable set application setting `appharbor.requesttracer.enabled` to `1`.
 
 ## Contributors
 

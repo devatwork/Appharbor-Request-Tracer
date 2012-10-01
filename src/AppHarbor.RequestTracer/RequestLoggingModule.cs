@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System;
+using System.Configuration;
+using System.Text;
 using System.Web;
 
 namespace AppHarbor.RequestTracer
@@ -8,6 +10,12 @@ namespace AppHarbor.RequestTracer
 	/// </summary>
 	public class RequestLoggingModule : IHttpModule
 	{
+		#region Constants
+		/// <summary>
+		/// Defines the name of the setting which to use to check if this logger is enabled.
+		/// </summary>
+		private const string LoggerEnabledSettingKey = "appharbor.requesttracer.enabled";
+		#endregion
 		#region Implementation of IHttpModule
 		/// <summary>
 		/// Initializes a module and prepares it to handle requests.
@@ -15,7 +23,15 @@ namespace AppHarbor.RequestTracer
 		/// <param name="context">An <see cref="T:System.Web.HttpApplication"/> that provides access to the methods, properties, and events common to all application objects within an ASP.NET application </param>
 		public void Init(HttpApplication context)
 		{
-			new LogEvent("Init request tracing").Raise();
+			// check if the module should be enabled
+			var enabled = ConfigurationManager.AppSettings[LoggerEnabledSettingKey];
+			if (string.IsNullOrEmpty(enabled) || !(enabled.Equals("true", StringComparison.OrdinalIgnoreCase) || enabled.Equals("1")))
+				return;
+
+			// log that we are logging :)
+			new LogEvent("Request tracing is enabled").Raise();
+
+			// log every incoming request
 			context.BeginRequest += (sender, args) =>
 			                        {
 			                        	var output = new StringBuilder();
@@ -83,6 +99,7 @@ namespace AppHarbor.RequestTracer
 		/// </summary>
 		public void Dispose()
 		{
+			// nothing to do here
 		}
 		#endregion
 	}
