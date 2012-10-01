@@ -8,6 +8,7 @@
 *.pidb
 *.userprefs
 *.log
+*.nupkg
 .DS_Store
 deploy/
 build/
