@@ -38,4 +38,4 @@ Copyright © 2012 Premotion Software Solutions and contributors.
 Appharbor RequestTracer is licensed under [MIT](http://www.opensource.org/licenses/mit-license.php "Read more about the MIT license form"). Refer to license.txt for more information.
 
 ## Download
-You can download the compiled binary from NuGet: [http://nuget.org/packages/Premotion.AspNet.AppHarbor.Integration](http://nuget.org/packages/Premotion.AspNet.AppHarbor.Integration)
+You can download the compiled binary from NuGet: [https://nuget.org/packages/AppHarbor.RequestTracer](https://nuget.org/packages/AppHarbor.RequestTracer)
