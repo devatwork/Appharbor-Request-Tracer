@@ -10,6 +10,7 @@
 		<description>This module traces incoming requests and their outgoing responses using the event log. The module should work on any platform but is specifically designed to work with AppHarbor.</description>
 		<frameworkAssemblies>
 			<frameworkAssembly assemblyName="System" targetFramework="net40" />
+			<frameworkAssembly assemblyName="System.Configuration" targetFramework="net40" />
 			<frameworkAssembly assemblyName="System.Web" targetFramework="net40" />
 		</frameworkAssemblies>
 		<releaseNotes>Initial version.</releaseNotes>
