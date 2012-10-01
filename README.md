@@ -1,6 +1,6 @@
 # Appharbor RequestTracer
 
-This module traces incoming requests and their outgoing repsonses using the event log. The module should work on any platform but is specifically designed to work with AppHarbor.
+This module traces incoming requests and their outgoing responses using the event log. The module should work on any platform but is specifically designed to work with AppHarbor.
 
 ## Configuration
 
